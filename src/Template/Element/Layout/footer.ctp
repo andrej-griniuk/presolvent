@@ -1,0 +1,9 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ */
+
+echo $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+echo $this->Html->script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
+echo $this->Html->script('app', ['block' => true]);
+echo $this->fetch('script');
