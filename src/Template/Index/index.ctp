@@ -221,7 +221,3 @@ $states = $options['states'];
         var states = <?= json_encode($states) ?>;
     </script>
 <?php $this->end() ?>
-<?php
-if ($prediction) {
-    debug($prediction);
-}
