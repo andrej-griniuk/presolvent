@@ -152,11 +152,10 @@ $states = $options['states'];
                     <ol>
                         <li class="pure-steps_group-step">
                             <header>
-                                <h2 class="pure-steps_group-step_legend">Welcome</h2>
-                                <p class="pure-steps_group-step_item">The <strong>"Step By Step"</strong> pattern is
-                                    usually 100% developed with JavaScript but you can use CSS too.</p>
-                                <p class="pure-steps_group-step_item">Enjoy this example of "what can be done" <strong>just
-                                        with SASS,</strong> simulating a "sign-up" process.</p>
+                                <h2 class="pure-steps_group-step_legend">Welcome to <strong style="font-weight: bold">Presolvent</strong></h2>
+                                <p class="pure-steps_group-step_item">Presolvent uses <strong>data</strong> from the <strong>Australian Financial Security Authority</strong>, in combination with <strong>ATO</strong> data to help <strong>predict when non-compliance</strong> might occur.</p>
+                                <p class="pure-steps_group-step_item">High-risk individuals <strong>identified</strong> by Presolvent can be given additional <strong>support and guidance</strong> about managing their finances, agreeing only to appropriate debt and insolvency agreements, so they can better meet their obligations.</p>
+                                <p class="pure-steps_group-step_item">Presolvent uses <strong>Machine Learning</strong> which is <strong>trained</strong> on limited datasets provided by the relevant Australian government bodies, it makes predictions of insolvency risk, but Presolvent is only a tool to be used in conjunction with human-assessed insolvency risk factors.</p>
                                 <p class="pure-steps_group-step_item"></p>
                             </header>
                         </li>
@@ -201,10 +200,10 @@ $states = $options['states'];
                             <label for="step-0">Restart</label>
                         </li>
                         <li class="pure-steps_group-triggers_item">
-                            <label for="step-1">Sign Up</label>
+                            <label for="step-1"><?= __('Start risk assessment') ?></label>
                         </li>
                         <li class="pure-steps_group-triggers_item">
-                            <label for="step-2" id="submit">Jump in</label>
+                            <label for="step-2" id="submit"><?= __('Predict insolvency risk') ?></label>
                         </li>
                     </ol>
                 </div>
