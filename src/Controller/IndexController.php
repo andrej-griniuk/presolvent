@@ -61,40 +61,12 @@ class IndexController extends AppController
             }
         }
 
-        if (Configure::read('debug')) {
-            // Mock results for testing purposes
-            $this->mock($features);
-
-            return;
-        }
-
         $modelManager = new ModelManager();
         /** @var \App\Phpml\Classification\NaiveBayes $estimator */
         $estimator = $modelManager->restoreFromFile(ROOT . DS . 'data' . DS . 'model.dat');
 
         $prediction = $estimator->predictIt($features);
         $probabilities = $estimator->predictProb($features);
-
-        $this->set(compact('prediction', 'probabilities'));
-        $this->set('_serialize', ['prediction', 'probabilities']);
-    }
-
-    protected function mock($features)
-    {
-        $crc = (string)crc32(json_encode($features));
-        $digit = (int)$crc[strlen($crc) - 1];
-
-        $prediction = '';
-        $probabilities = [];
-
-        if ($digit <= 2) {
-            $prediction = 'Bankrupt';
-            $probabilities = [];
-        } elseif ($digit <= 5) {
-            $probabilities = [
-                'Objection to Discharge' => 50,
-            ];
-        }
 
         $this->set(compact('prediction', 'probabilities'));
         $this->set('_serialize', ['prediction', 'probabilities']);
