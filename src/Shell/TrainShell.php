@@ -58,11 +58,10 @@ class TrainShell extends Shell
         return $parser;
     }
 
-    public function runAll()
+    public function main()
     {
         $this->run();
         $this->train();
-        $this->test();
     }
 
     public function run($filename = 'dataset.csv', $limit = 0)

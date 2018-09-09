@@ -6,6 +6,7 @@
 /tmp/*
 /vendor/*
 /data/*
+!/data/options.json
 
 # OS generated files #
 ######################
