@@ -54,6 +54,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Index', 'action' => 'index']);
+    $routes->connect('/predict', ['controller' => 'Index', 'action' => 'predict']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
