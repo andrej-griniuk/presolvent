@@ -164,24 +164,24 @@ $states = $options['states'];
 
                             <div class="row">
                                 <div class="col-xs-4">
-                                    <?= $this->Form->control('features.2', ['label' => __('State'), 'id' => 'state', 'options' => array_combine(array_keys($states), array_keys($states))]) ?>
+                                    <?= $this->Form->control('state', ['label' => __('State'), 'id' => 'state', 'options' => array_combine(array_keys($states), array_keys($states))]) ?>
                                 </div>
                                 <div class="col-xs-4">
-                                    <?= $this->Form->control('features.1', ['label' => __('Region'), 'id' => 'gccsa', 'options' => []]) ?>
+                                    <?= $this->Form->control('region', ['label' => __('Region'), 'id' => 'gccsa', 'options' => []]) ?>
                                 </div>
                                 <div class="col-xs-4">
-                                    <?= $this->Form->control('features.0', ['label' => __('Suburb'), 'id' => 'sa', 'options' => []]) ?>
+                                    <?= $this->Form->control('suburb', ['label' => __('Suburb'), 'id' => 'sa', 'options' => []]) ?>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-6"><?= $this->Form->control('features.3', ['label' => __('Sex'), 'options' => array_combine($sexes, $sexes)]) ?></div>
-                                <div class="col-xs-6"><?= $this->Form->control('features.4', ['label' => __('Family Situation'), 'options' => array_combine($familySituations, $familySituations) ]) ?></div>
+                                <div class="col-xs-6"><?= $this->Form->control('sex', ['label' => __('Sex'), 'options' => array_combine($sexes, $sexes)]) ?></div>
+                                <div class="col-xs-6"><?= $this->Form->control('family-situation', ['label' => __('Family Situation'), 'options' => array_combine($familySituations, $familySituations) ]) ?></div>
                             </div>
-                            <?= $this->Form->control('features.5', ['label' => __('Occupation'), 'options' => array_combine($occupations, $occupations)]) ?>
-                            <?= $this->Form->control('features.7', ['label' => __('Primary Income Source'), 'options' => array_combine($incomeSources, $incomeSources)]) ?>
-                            <?= $this->Form->control('features.6', ['label' => __('Income'), 'options' => array_combine($incomes, $incomes)]) ?>
-                            <?= $this->Form->control('features.8', ['label' => __('Unsecured Debts'), 'options' => array_combine($depts, $depts)]) ?>
-                            <?= $this->Form->control('features.9', ['label' => __('Value of Assets'), 'options' => array_combine($assets, $assets)]) ?>
+                            <?= $this->Form->control('occupation', ['label' => __('Occupation'), 'options' => array_combine($occupations, $occupations)]) ?>
+                            <?= $this->Form->control('income-source', ['label' => __('Primary Income Source'), 'options' => array_combine($incomeSources, $incomeSources)]) ?>
+                            <?= $this->Form->control('income', ['label' => __('Income'), 'options' => array_combine($incomes, $incomes)]) ?>
+                            <?= $this->Form->control('debts', ['label' => __('Unsecured Debts'), 'options' => array_combine($depts, $depts)]) ?>
+                            <?= $this->Form->control('assets', ['label' => __('Value of Assets'), 'options' => array_combine($assets, $assets)]) ?>
 
                         </li>
                         <li class="pure-steps_group-step flexy-item" style="padding:2em" id="result">

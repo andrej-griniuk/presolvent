@@ -25,20 +25,50 @@ class IndexController extends AppController
         $probabilities = null;
 
         if ($this->request->is('post')) {
-            $data = $this->request->getData('features');
-
-            $modelManager = new ModelManager();
-            /** @var \App\Phpml\Classification\NaiveBayes $estimator */
-            $estimator = $modelManager->restoreFromFile(ROOT . DS . 'data' . DS . 'model.dat');
-
-            $prediction = $estimator->predictIt($data);
-            $probabilities = $estimator->predictProb($data);
+            $this->predict();
         }
 
+        $this->set(compact('options'));
+    }
 
-        $this->set(compact('options', 'prediction'));
+    /**
+     * Predict method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function predict()
+    {
+        $map = [
+            'state' => 2,
+            'region' => 1,
+            'suburb' => 0,
+            'sex' => 3,
+            'family-situation' => 4,
+            'occupation' => 5,
+            'income-source' => 7,
+            'income' => 6,
+            'debts' => 8,
+            'assets' => 9,
+        ];
 
-        $this->set(compact('options', 'prediction', 'probabilities'));
+        $features = [];
+        if (!$data = $this->request->getData()) {
+            $data = $this->request->getQueryParams();
+        }
+        foreach ($data as $k => $v) {
+            if (isset($map[$k])) {
+                $features[$map[$k]] = $v;
+            }
+        }
+
+        $modelManager = new ModelManager();
+        /** @var \App\Phpml\Classification\NaiveBayes $estimator */
+        $estimator = $modelManager->restoreFromFile(ROOT . DS . 'data' . DS . 'model.dat');
+
+        $prediction = $estimator->predictIt($features);
+        $probabilities = $estimator->predictProb($features);
+
+        $this->set(compact('prediction', 'probabilities'));
         $this->set('_serialize', ['prediction', 'probabilities']);
     }
 

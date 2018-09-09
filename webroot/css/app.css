@@ -21,6 +21,10 @@
         color: #fff;
     }
 
+.navbar {
+    margin-bottom: 50px;
+}
+
 .form-group label {
     font-weight: normal;
 }
