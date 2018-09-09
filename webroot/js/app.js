@@ -39,7 +39,7 @@ $('#form').on('submit', function (e) {
 
             var $result = $('#result');
             if (data['prediction'] !== '') {
-                $result.html('<div class="row danger" style="width:100%"><div class="col-xs-12"></div><div class="col-xs-12"><h1>Achtung!!! <strong>' + data['prediction'] + '</strong></h1><div class="pure-steps_preload"><i class="fa fa-times"></i></div></div></div>');
+                $result.html('<div class="row danger" style="width:100%"><div class="col-xs-12"></div><div class="col-xs-12"><h1>High Risk of <strong>' + data['prediction'] + '</strong></h1><div class="pure-steps_preload"><i class="fa fa-times"></i></div></div></div>');
             } else {
                 var probability = '';
                 for (var i in data['probabilities']) {
@@ -49,9 +49,9 @@ $('#form').on('submit', function (e) {
                     }
                 }
                 if (probability !== '') {
-                    $result.html('<div class="row warning" style="width:100%"><div class="col-xs-12"></div><div class="col-xs-12"><h1>Warning! <strong>' + probability + '</strong></h1><div class="pure-steps_preload"><i class="fa fa-exclamation"></i></div></div></div>');
+                    $result.html('<div class="row warning" style="width:100%"><div class="col-xs-12"></div><div class="col-xs-12"><h1>Medium risk of <strong>' + probability + '</strong></h1><div class="pure-steps_preload"><i class="fa fa-exclamation"></i></div></div></div>');
                 } else {
-                    $result.html('<div class="row" style="width:100%"><div class="col-xs-12"></div><div class="col-xs-12"><h1><strong>All good!</strong></h1><div class="pure-steps_preload"><i class="fa fa-check"></i></div></div></div>');
+                    $result.html('<div class="row" style="width:100%"><div class="col-xs-12"></div><div class="col-xs-12"><h1><strong>Low risk of non-compliance</strong></h1><div class="pure-steps_preload"><i class="fa fa-check"></i></div></div></div>');
                 }
             }
         }
